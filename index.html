@@ -1,76 +1,1611 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fluid Effect</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-        }
-    </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-</head>
-<body>
-    <script id="fragmentShader" type="x-shader/x-fragment">
-        uniform float time;
-        uniform vec2 resolution;
-        void main() {
-            vec2 uv = gl_FragCoord.xy / resolution.xy;
-            vec2 p = uv - 0.5;
-            float len = length(p);
-            float ripple = 0.03 / (len + 0.03);
-            float wave = 0.5 + 0.5 * cos(10.0 * len - time);
-            gl_FragColor = vec4(uv.x, uv.y, wave * ripple, 1.0);
-        }
-    </script>
+    <!-- Required meta tags -->
+        <meta property="og:site_name" content="Wild Paint House Dubai: the wildest art jamming studio in the world!">
+    <meta property="og:title" content="Wild Paint House Dubai: the wildest art jamming studio in the world!" />
+    <meta property="og:description" content="Play with paint. No rules, no boundaries, no stress." />
+    <meta property="og:image" itemprop="image" content="https://wildpainthouse.com/public/assets/images/Logo.png">
 
+    <title>Wild Paint House. GO WILD!!</title>
+    <meta name="keywords" content="Wild Paint House, Painting, Having fun" />
+    <meta name="description" content="Wild Paint House The wildest art jamming studio in the world, a space where fun meets creativity and imagination. No skills required to create amazing artworks and take them home! For kids, families, dates, team bondings and anything else you can imagine. A must-try when in Dubai.">
+    <meta charset="utf-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
+    <!-- FAVICON -->
+    <link rel="icon" type="favicon" href="https://wildpainthouse.com/public/assets/images/favicon.png" />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://wildpainthouse.com/public/assets/css/npmbootstrap.min.css" />
+    <link rel="stylesheet" href="https://wildpainthouse.com/public/assets/css/simpleLightbox.min.css" />
+    <link rel="stylesheet" href="https://wildpainthouse.com/public/assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://wildpainthouse.com/public/assets/css/animate.min.css" />
+    <link rel="stylesheet" href="https://wildpainthouse.com/public/assets/css/style.css" />
+    <link rel="stylesheet" href="https://wildpainthouse.com/public/assets/css/book-now.css" />
+    <link rel="stylesheet" href="https://wildpainthouse.com/public/assets/css/theme.css" />
+    <link rel="stylesheet" href="https://wildpainthouse.com/public/assets/css/device.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1YPQKQYKRP"></script>
     <script>
-        let scene, camera, renderer, uniforms;
+      window.dataLayer = window.dataLayer || [];
 
-        function init() {
-            scene = new THREE.Scene();
-            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            renderer = new THREE.WebGLRenderer();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            document.body.appendChild(renderer.domElement);
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
 
-            uniforms = {
-                time: { value: 1.0 },
-                resolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) }
-            };
-
-            const shaderMaterial = new THREE.ShaderMaterial({
-                uniforms: uniforms,
-                fragmentShader: document.getElementById('fragmentShader').textContent
-            });
-
-            const plane = new THREE.PlaneBufferGeometry(2, 2);
-            const mesh = new THREE.Mesh(plane, shaderMaterial);
-            scene.add(mesh);
-
-            camera.position.z = 1;
-
-            animate();
-        }
-
-        function animate() {
-            uniforms.time.value += 0.01;
-            renderer.render(scene, camera);
-            requestAnimationFrame(animate);
-        }
-
-        window.addEventListener('resize', onWindowResize, false);
-
-        function onWindowResize() {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            uniforms.resolution.value.set(window.innerWidth, window.innerHeight);
-        }
-
-        init();
+      gtag('config', 'G-1YPQKQYKRP');
     </script>
-</body>
-</html>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11040370687"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'AW-11040370687');
+    </script>
+    <style>
+      .simplybook-widget-button.right {
+        right: 0px;
+        transform: rotate(-90deg);
+        transform-origin: 100% 100%;
+        border-radius: 5px 5px 0 0;
+      }
+
+      .simplybook-widget-button {
+        position: fixed;
+        display: table;
+        padding: 15px;
+        font-size: 1.2em;
+        cursor: pointer;
+        z-index: 9999;
+        box-shadow: 0px 1px 2px 0px rgb(0 0 0 / 35%);
+      }
+
+      .simplybook-widget-button:hover div {
+        margin-bottom: 5px;
+      }
+    </style>
+    </head>
+
+    <body>
+      <section class="header">
+        <div class="container">
+          <div class="row">
+            <div class="col-1">
+              <!-- <a href="https://www.wildpainthouse.com" class="logo"> -->
+              <a href="https://www.wildpainthouse.com/home" class="logo">
+                <img src="https://wildpainthouse.com/public/assets/images/Logo.png" alt="Logo" class="logo-img" />
+                <img src="https://wildpainthouse.com/public/assets/images/Logo.png" alt="Logo" class="head-logo-icon" />
+              </a>
+            </div>
+            <div class="col-10">
+              <div class="navigation-grp">
+                <ul class="header-menu">
+                  <li class="active">
+                    <a href="#">Home</a>
+                  </li>
+                </ul>
+                <div class="btn-bubble">
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="goo">
+                    <defs>
+                      <filter id="goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                        <feComposite in="SourceGraphic" in2="goo" />
+                      </filter>
+                    </defs>
+                  </svg>
+                  <!-- <span class="button--bubble__container">
+                  <a href="https://rayqubelive.com/wildpaint/experience" class="button button--bubble">
+                    BOOK AN EXPERIENCE
+                  </a>
+                  <span class="button--bubble__effect-container">
+                    <span class="circle top-left"></span>
+                    <span class="circle top-left"></span>
+                    <span class="circle top-left"></span>
+                    <span class="button effect-button"></span>
+                    <span class="circle bottom-right"></span>
+                    <span class="circle bottom-right"></span>
+                    <span class="circle bottom-right"></span>
+                  </span>
+                </span> -->
+                </div>
+                <a href="javascript:void(0)" class="hamburger">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </a>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="fullscreen">
+                <canvas id="canvas"></canvas>
+                <svg class="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">
+                  <path class="shape-overlays__path"></path>
+                  <path class="shape-overlays__path"></path>
+                  <path class="shape-overlays__path"></path>
+                  <path class="shape-overlays__path"></path>
+                  <path class="shape-overlays__path"></path>
+                </svg>
+                <div class="container">
+                  <div class="row">
+                    <div class="col-10">
+                      <!-- <a href="https://www.wildpainthouse.com" class="menu-logo"> -->
+                      <a href="https://www.wildpainthouse.com/home" class="menu-logo">
+                        <img src="https://wildpainthouse.com/public/assets/images/Logo.png" alt="Logo" class="logo-img" />
+                      </a>
+                    </div>
+                    <div class="col-2"> <a href="javascript:void(0)" class="hamburger">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </a></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-sm-6">
+                      <div class="mob-menu-grp">
+                                                <ul class="global-menu__wrap">
+                                                                              <li><a class="global-menu_link" href="#">Menu<span> </span></a>
+                            <ul class="dropdown">
+                                                            <li><a href="https://www.wildpainthouse.com/menu/experience">Experiences</a></li>
+                                                            <li><a href="https://www.wildpainthouse.com/menu/giftcards">Gift Cards</a></li>
+                                                            <li><a href="https://www.wildpainthouse.com/menu/membership">Memberships</a></li>
+                                                            <li><a href="https://www.wildpainthouse.com/menu/merchandise">Merchandise</a></li>
+                                                          </ul>
+                          </li>
+                                                                                                        <li><a class="global-menu_link" href="#">Parties &amp; Groups<span> </span></a>
+                            <ul class="dropdown">
+                                                            <li><a href="https://www.wildpainthouse.com/partygroup/birthdayparty">Birthday Parties</a></li>
+                                                            <li><a href="https://www.wildpainthouse.com/partygroup/teambonding">Team Bonding Events</a></li>
+                                                            <li><a href="https://www.wildpainthouse.com/partygroup/school">Schools</a></li>
+                                                            <li><a href="https://www.wildpainthouse.com/partygroup/spacerentals">Space Rental</a></li>
+                                                            <li><a href="https://www.wildpainthouse.com/partygroup/launchevents">Launch Events and Activation</a></li>
+                                                          </ul>
+                          </li>
+                                                                                                        <li><a class="global-menu_link" href="https://www.wildpainthouse.com/events">Events</a></li>
+                                                                                                        <li><a class="global-menu_link" href="https://www.wildpainthouse.com/aboutus">About Us</a></li>
+                                                                                                        <li><a class="global-menu_link" href="https://www.wildpainthouse.com/contactus">Contact Us</a></li>
+                                                                                                                                                            <li><a class="global-menu_link" href="https://www.wildpainthouse.com/home">Home</a></li>
+                                                                            </ul>
+                                                <ul class="secondary-menu">
+                                                                                                                                                                                                                                                                                                                                                                            <li><a class="global-menu_link" href="https://www.wildpainthouse.com/franchise">Franchise</a></li>
+                                                    <li><a class="global-menu_link" href="https://www.wildpainthouse.com/faq">FAQ</a></li>
+                                                    <li><a class="global-menu_link" href="https://www.wildpainthouse.com/blogs">Blogs</a></li>
+                                                                                                                                                          </ul>          
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-6  align-items-flex-end">
+                      <div class="address-cont">
+                        <div class="adr-bx">
+                          <h5>Address</h5>
+                          <p>Warehouse 1,Al Marabea St&rsquo;,<br>
+                            Al Quoz 1, Dubai, UAE</p>
+                        </div>
+                        <div class="adr-bx">
+                          <h5>CONTACT US</h5>
+                          <a href="tel:+971%2056%20833%206804"><img src="https://wildpainthouse.com/public/assets/images/svg/whatapp-icon.svg" class="svg" alt="img">+971 54 505 7944</a>
+                        </div>
+                        <div class="adr-bx">
+                          <h5>EMAIL</h5>
+                          <a href="mailto:hello@wildpainthouse.com"><img src="https://wildpainthouse.com/public/assets/images/svg/mail-icon.svg" class="svg" alt="img">hello@wildpainthouse.com</a>
+                        </div>
+                        <ul class="social-link">
+                          <li><a href="https://www.instagram.com/wildpainthouse/" target="_blank"><img src="https://wildpainthouse.com/public/assets/images/svg/social-media-icon1.svg" class="svg" alt="img"></a></li>
+                          <li><a href="https://www.facebook.com/wildpainthouse" target="_blank"><img src="https://wildpainthouse.com/public/assets/images/svg/social-media-icon2.svg" class="svg" alt="img"></a></li>
+                          <li><a href="https://www.tiktok.com/@wildpainthouse" target="_blank"><img src="https://wildpainthouse.com/public/assets/images/svg/social-media-icon4.svg" class="svg" alt="img"></a></li>
+                        </ul>
+                      </div>
+                    </div>
+  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <a href="https://wildpainthouse.simplybook.me/v2/#book" target="_blank">
+        <div class="simplybook-widget-button right" style="background-color: rgb(255, 173, 95); color: rgb(15, 14, 14); bottom: 55%;">
+          <div>Book now</div>
+        </div>
+      </a>
+
+
+      <!-- <script src="//widget.simplybook.me/v2/widget/widget.js"></script>
+<script>var widget = new SimplybookWidget({"widget_type":"button","url":"https:\/\/wildpainthouse.simplybook.me","theme":"space","theme_settings":{"timeline_hide_unavailable":"1","sb_base_color":"#d42853","hide_past_days":"0","timeline_show_end_time":"0","timeline_modern_display":"as_slots","display_item_mode":"block","sb_review_image":"","dark_font_color":"#474747","light_font_color":"#ffffff","sb_company_label_color":"#ffffff","hide_img_mode":"0","show_sidebar":"1","sb_busy":"#dad2ce","sb_available":"#d3e0f1"},"timeline":"modern","datepicker":"top_calendar","is_rtl":false,"app_config":{"clear_session":0,"allow_switch_to_ada":0,"predefined":[]},"button_title":"Book now","button_background_color":"#ffad5f","button_text_color":"#0f0e0e","button_position":"right","button_position_offset":"55%"});</script> -->  
+    
+<!--  loader section --><div class="loader"> 
+<span class="load-img"><img src="https://wildpainthouse.com/public/assets/images/svg/paint1.svg"></span>
+    <span class="load-img"><img src="https://wildpainthouse.com/public/assets/images/svg/paint2.svg"></span>
+    <span class="load-img"><img src="https://wildpainthouse.com/public/assets/images/svg/paint3.svg"></span>
+    <span class="load-img"><img src="https://wildpainthouse.com/public/assets/images/svg/paint4.svg"></span>
+    <div class="loader__bckg"></div>
+    <div class="loader__logo">
+       <img src="https://wildpainthouse.com/public/assets/images/loader-icon1.png" alt="" class="loader-logo" width="400" height="400">
+       <span></span>
+    </div>
+</div><section class="banner">
+    <video class="lazy loading" id="myvid" autoplay="" muted="" playsinline="" loop="" preload="none" autobuffer="true" data-ll-status="loading">
+    <source src="https://wildpainthouse.com/public/assets/images/video/hero-video-optimized-small.mp4" type="video/mp4">
+    </source></video>
+<!-- <video muted="" autoplay="" loop="" class="lazy bigVideo">
+    <source src="https://wildpainthouse.com/public/assets/images/video/hero-video-optimized.mp4" type="video/mp4">
+    </video>
+    <video muted="" autoplay="" loop="" class="lazy smallVideo">
+    <source src="https://wildpainthouse.com/public/assets/images/video/hero-video-optimized-small.mp4" type="video/mp4">
+    </video> -->
+    <div class="container">
+    <div class="banner-cont">
+        <h1 class="wow flipInX" data-wow-delay="0.4s">Abandon normal,  <span>
+        adopt WILD!</span></h1>
+        <div class="btn-bubble">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="goo">
+            <defs>
+            <filter id="goo">
+                <fegaussianblur in="SourceGraphic" stddeviation="10" result="blur"></fegaussianblur>
+                <fecolormatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo"></fecolormatrix>
+                <fecomposite in="SourceGraphic" in2="goo"></fecomposite>
+            </filter>
+            </defs>
+        </svg>
+        </div>
+    </div>
+    </div>
+    <div class="bottom-shape  ">
+    <img src="https://wildpainthouse.com/public/assets/images/svg/banner-shape.png" alt="img" class="svg">
+    </div>
+    <div class="bottom-shape bottom-shape2 ">
+    <img src="https://wildpainthouse.com/public/assets/images/svg/banner-shape2.png" alt="img" class="svg">
+    </div>
+    <div class="bottom-dots move-object">
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <img src="https://wildpainthouse.com/public/assets/images/svg/banner-dots.png" alt="img" class="svg">
+    </div>
+</section><section class="feature-bx">
+    <div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="section-title  wow bounceInLeft">
+                <h2>wild paint house
+                <span class="paint-icon left wow zoomIn" data-wow-duration="0.1s" data-wow-delay="0.9s">
+                    <span class="drop"></span>
+                    <span class="drop"></span>
+                    <span class="drop"></span>
+                    <span class="drop"></span>
+                    <img src="https://wildpainthouse.com/public/assets/images/svg/orange-paint-icon.svg">
+                </span>
+                </h2>
+                <h3>PLAY WITH PAINTS. NO RULES, NO BOUNDARIES, NO STRESS.</h3>
+                <p>The wildest art jamming studio in the world, a space where fun meets creativity and imagination. No skills required to create amazing artworks and take them home! For kids, families, dates, team bondings and anything else you can imagine. A must-try when in Dubai. </p>
+            </div>
+        </div>
+        
+        <!--  end -->
+    </div>
+    </div>
+</section><section class="experience-sec">
+    <div class="shape top"><img src="https://wildpainthouse.com/public/assets/images/svg/experience-shape1.svg" alt="img"></div>
+    <div class="shape bottom"><img src="https://wildpainthouse.com/public/assets/images/svg/experience-shape2.svg" alt="img"></div>
+    <div class="blue-dot"><img src="https://wildpainthouse.com/public/assets/images/svg/blue-dots2.svg" class="svg" alt="img"></div>
+    <div class="dot bottom-dot">
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <img src="https://wildpainthouse.com/public/assets/images/svg/blue-dot.svg" alt="img">
+    </div>
+    <div class="dot top-dot">
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <img src="https://wildpainthouse.com/public/assets/images/svg/exp-dots.svg" alt="img">
+    </div>
+    <div class="container">
+    <div class="row">
+        <div class="col-12">
+        <div class="section-title wow bounceInRight" data-wow-delay="0.1s">
+            <h2>Our Experiences
+            <span class="paint-icon wow zoomIn" data-wow-duration="0.1s" data-wow-delay="0.9s">
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <img src="https://wildpainthouse.com/public/assets/images/svg/orange-paint-icon.svg">
+            </span>
+            </h2>
+            <p> Wild Paint House Dubai offers 6 unique art jamming painting experiences. Let your creative juices flow!</p>
+        </div>
+        </div>
+    </div>
+    <ul class="experince-list row">
+        <li class="col-12 col-sm-6 col-md-4 col-lg-3 wow rotateInUpRight" data-wow-delay="0.3s">
+        <div class="experince-bx experince-bx1  ">
+            <div class="exp-img">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/home-icon.png" class="svg" alt="img">
+            <div class="paint-grp">
+                <span class="load-img2"><img src="https://wildpainthouse.com/public/assets/images/svg/paint1.svg" class="svg"></span>
+                <span class="load-img2"><img src="https://wildpainthouse.com/public/assets/images/svg/paint2.svg" class="svg"></span>
+                <span class="load-img2"><img src="https://wildpainthouse.com/public/assets/images/svg/paint3.svg" class="svg"></span>
+            </div>
+            </div>
+            <div class="img-text">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/name-splat.svg" class="svg" alt="img">
+            </div>
+            <p>Create dynamic art in the most unconventional way!</p>
+            <a href="https://wildpainthouse.simplybook.me/v2/#book" target="_blank" class="commn-btn2"><span>BOOK NOW</span></a>
+        </div>
+        </li>
+        <!-- end  -->
+        <li class="col-12 col-sm-6 col-md-4 col-lg-3 wow rotateInUpLeft" data-wow-delay="0.3s">
+        <div class="experince-bx experince-bx4  ">
+            <div class="exp-img">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/home-icon3.png" class="svg" alt="img">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/home-in-icon4.svg" class="svg exp-img4" alt="img">
+            </div>
+            <div class="img-text">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/name-spin.svg" class="svg" alt="img">
+            </div>
+            <p>Give paints and canvases a spin with our unique manual spin art machines. A new experience for adults and kids above 1m.</p>
+            <a href="https://wildpainthouse.simplybook.me/v2/#book" class="commn-btn2" target="_blank"><span>BOOK NOW</span></a>
+        </div>
+        </li>
+        <!-- end  -->
+        <li class="col-12 col-sm-6 col-md-4 col-lg-3  wow bounceInUp" data-wow-delay="0.4s">
+        <div class="experince-bx experince-bx2 ">
+            <div class="exp-img">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/home-icon2.png" class="svg" alt="img">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/home-in-icon2.svg" class="svg exp-img2 wow swing" alt="img">
+            </div>
+            <div class="img-text">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/name-swing.svg" class="svg" alt="img">
+            </div>
+            <p>Play with pendulum art and trapezes on a gentle electric table.</p>
+            <a href="https://wildpainthouse.simplybook.me/v2/#book" class="commn-btn2" target="_blank"><span>BOOK NOW</span></a>
+        </div>
+        </li>
+        <!-- end  -->
+        <li class="col-12 col-sm-6 col-md-4 col-lg-3 wow bounceInDown" data-wow-delay="0.5s">
+        <div class="experince-bx experince-bx6  ">
+            <div class="exp-img">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/home-icon6.png" class="svg" alt="img">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/home-in-icon6.svg" class="svg exp-img6" alt="img">
+            </div>
+            <div class="img-text">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/name-pour.svg" class="svg" alt="img">
+            </div>
+            <p>Fluid Art your heart out - experience acrylic pour on canvases or try our Fluid Bears!</p>
+            <a href="https://wildpainthouse.simplybook.me/v2/#book" class="commn-btn2" target="_blank"><span>BOOK NOW</span></a>
+        </div>
+        </li>
+        <!-- end  -->
+        <li class="col-12 col-sm-6 col-md-4 col-lg-3 wow bounceInUp" data-wow-delay="0.5s">
+        <div class="experince-bx experince-bx3  ">
+            <div class="exp-img">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/home-icon4.png" class="svg" alt="img">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/home-in-icon3.svg" class="svg exp-img3" alt="img">
+            </div>
+            <div class="img-text">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/name-neon.svg" class="svg" alt="img">
+            </div>
+            <p>Get funky under UV lights - splat or spin, it's your choice.</p>
+            <a href="https://wildpainthouse.simplybook.me/v2/#book" class="commn-btn2" target="_blank"><span>BOOK NOW</span></a>
+        </div>
+        </li>
+        <!-- end  -->
+        
+        <li class="col-12 col-sm-6 col-md-4 col-lg-3 wow bounceInDown" data-wow-delay="0.4s" style="z-index:100;">
+        <div class="experince-bx experince-bx5  ">
+            <div class="exp-img">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/home-icon5.png" class="svg" alt="img">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/home-in-icon5.svg" class="svg exp-img5" alt="img">
+            </div>
+            <div class="img-text">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/name-graffit.svg" class="svg" alt="img">
+            </div>
+            <p>Tag and spray our outdoor walls - it's legal here! Only available in the cooler months.</p>
+            <a href="https://wildpainthouse.simplybook.me/v2/#book" class="commn-btn2" target="_blank"><span>BOOK NOW</span></a>
+        </div>
+        </li>
+        <!-- end  -->
+    </ul>
+    </div>
+</section><section class="vibe-sec">
+    <div class="shape bottom"><img src="https://wildpainthouse.com/public/assets/images/svg/vibe-shape.svg" class="img"></div>
+    <div class="dot bottom-dot">
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <img src="https://wildpainthouse.com/public/assets/images/svg/vibe-bottom-dot.svg" alt="img">
+    </div>
+    <div class="dot top-dot">
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <img src="https://wildpainthouse.com/public/assets/images/svg/vibe-top-dot.svg" alt="img">
+    </div>
+    <div class="container">
+    <div class="row">
+        <div class="col-12">
+        <div class="section-title  wow bounceInLeft" data-wow-delay="0.1s">
+            <h2>Experience the Vibe
+            <span class="paint-icon left wow zoomIn" data-wow-duration="0.1s" data-wow-delay="0.9s">
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <img src="https://wildpainthouse.com/public/assets/images/svg/orange-paint-icon.svg">
+            </span>
+            </h2>
+            <p>Colorful, uninhibited fun for all ages - here's a sneak peak of our unique space:</p>
+        </div>
+        </div>
+    </div>
+    <ul class="experince-vibe-list row">
+        <li class="col-6 col-sm-6 col-md-4  wow bounceInLeft" data-wow-delay="0.1s">
+        <a href="https://wildpainthouse.com/public/assets/images/pendulumart.jpg" class="vibe-img">
+            <img src="https://wildpainthouse.com/public/assets/images/pendulumart.jpg" alt="img">
+            <div class="overlay-text">
+            <div class="img-bx"> <img src="https://wildpainthouse.com/public/assets/images/svg/search-icon.svg" alt="img"></div>
+            </div>
+        </a>
+        </li>
+        <!-- end  -->
+        <li class="col-6 col-sm-6 col-md-4   wow bounceInLeft" data-wow-delay="0.2s">
+        <a href="#" data-lightbox-type="video" data-lightbox-content="https://wildpainthouse.com/public/assets/images/video/instag_1.mp4" class="vibe-video">
+            <img src="https://wildpainthouse.com/public/uploads/gallery/homeimg_2_1676010649.png" alt="img">
+            <div class="overlay-text">
+            <div class="img-bx"> <img src="https://wildpainthouse.com/public/assets/images/svg/play-icon.svg" alt="img"></div>
+            </div>
+        </a>
+        </li>
+        <!-- end  -->
+        <li class="col-6 col-sm-6 col-md-4   wow bounceInLeft" data-wow-delay="0.3s">
+        <a href="https://wildpainthouse.com/public/assets/images/splat_1.jpg" class="vibe-img">
+            <img src="https://wildpainthouse.com/public/assets/images/splat_1.jpg" alt="img">
+            <div class="overlay-text">
+            <div class="img-bx"> <img src="https://wildpainthouse.com/public/assets/images/svg/search-icon.svg" alt="img"></div>
+            </div>
+        </a>
+        </li>
+        <!-- end  -->
+        <li class="col-6 col-sm-6 col-md-4   wow  bounceInRight" data-wow-delay="0.1s">
+        <a href="https://wildpainthouse.com/public/assets/images/graffiti_outdoor_freestyle.jpg" class="vibe-img">
+            <img src="https://wildpainthouse.com/public/assets/images/graffiti_outdoor_freestyle.jpg" alt="img">
+            <div class="overlay-text">
+            <div class="img-bx"> <img src="https://wildpainthouse.com/public/assets/images/svg/search-icon.svg" alt="img"></div>
+            </div>
+        </a>
+        </li>
+        <!-- end  -->
+        <li class="col-6 col-sm-6 col-md-4   wow  bounceInRight" data-wow-delay="0.2s">
+        <a href="https://wildpainthouse.com/public/uploads/gallery/home_img5_croped_1676013347.jpg" class="vibe-img">
+            <img src="https://wildpainthouse.com/public/uploads/gallery/home_img5_croped_1676013347.jpg" alt="img">
+            <div class="overlay-text">
+            <div class="img-bx"> <img src="https://wildpainthouse.com/public/assets/images/svg/search-icon.svg" alt="img"></div>
+            </div>
+        </a>
+        </li>
+        <!-- end  -->
+        <li class="col-6 col-sm-6 col-md-4  wow  bounceInRight" data-wow-delay="0.3s">
+        <a href="#" data-lightbox-type="video" data-lightbox-content="https://wildpainthouse.com/public/assets/images/video/instag_2.mp4" class="vibe-video">
+            <img src="https://wildpainthouse.com/public/assets/images/IMG_3815.jpg" alt="img">
+            <div class="overlay-text">
+            <div class="img-bx"> <img src="https://wildpainthouse.com/public/assets/images/svg/play-icon.svg" alt="img"></div>
+            </div>
+        </a>
+        </li>
+        <!-- end  -->
+    </ul>
+    </div>
+</section><section class="feature-bx">
+    <div class="container">
+    <div class="row">
+        <div class="col-12">
+        <div class="section-title  wow bounceInLeft">
+            <h2>wild paint house
+            <span class="paint-icon left wow zoomIn" data-wow-duration="0.1s" data-wow-delay="0.9s">
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <img src="https://wildpainthouse.com/public/assets/images/svg/orange-paint-icon.svg">
+            </span>
+            </h2>
+            <h3>PLAY WITH PAINTS. NO RULES, NO BOUNDARIES, NO STRESS.</h3>
+            <p>The wildest art jamming studio in the world, a space where fun meets creativity and imagination. No skills required to create amazing artworks and take them home! For kids, families, dates, team bondings and anything else you can imagine. A must-try when in Dubai. </p>
+        </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6">
+        <div class="feature-cont wow bounceInLeft" data-wow-delay="0.2s">
+            <div class="feature-img feature-img1">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/paint-bg-icon.svg" class="svg img1 wow zoomIn" data-wow-duration="0.1s" data-wow-delay="1.3s" alt="img">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/rating1.svg" class="img2" alt="img">
+            </div>
+            <h4>1. Book A Slot</h4>
+            <p>Walk-in at the reserved time slot. Don a poncho or apron, but we recommend coming in clothes that you do not mind getting messy!</p>
+        </div>
+        </div>
+        <!--  end -->
+        <div class="col-12 col-sm-6 col-md-6">
+        <div class="feature-cont wow bounceInUp" data-wow-delay="0.4s">
+            <div class="feature-img feature-img2">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/paint-bg-icon.svg" class="svg img1 wow zoomIn" data-wow-duration="0.1s" data-wow-delay="1.6s" alt="img">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/rating2.svg" class="img2" alt="img">
+            </div>
+            <h4>2. Get Briefed</h4>
+            <p>We get you started with some basic tips and techniques to spark the imagination. Pick your colours and creative tools.</p>
+        </div>
+        </div>
+        <!--  end -->
+        <div class="col-12 col-sm-6 col-md-6">
+        <div class="feature-cont wow bounceInDown" data-wow-delay="0.6s">
+            <div class="feature-img feature-img3">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/paint-bg-icon.svg" class="svg img1 wow zoomIn" data-wow-duration="0.1s" data-wow-delay="1.9s" alt="img">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/rating3.svg" class="img2" alt="img">
+            </div>
+            <h4>3. Get Wild!</h4>
+            <p>Spin art machines, splatter painting walls, acrylic pour, UV painting or graffiti! Discover art in a way you never imagined.</p>
+        </div>
+        </div>
+        <!--  end -->
+        <div class="col-12 col-sm-6 col-md-6" style="z-index:100">
+        <div class="feature-cont wow bounceInRight" data-wow-delay="0.8s">
+            <div class="feature-img feature-img4">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/paint-bg-icon.svg" class="svg img1 wow zoomIn" data-wow-duration="0.1s" data-wow-delay="2.3s" alt="img">
+            <img src="https://wildpainthouse.com/public/assets/images/svg/rating4.svg" class="img2" alt="img">
+            </div>
+            <h4>4. Voila! You're an Artist!</h4>
+            <p>"What separates the best artists from the good ones is knowing when to stop". We made that up. But only you can decide when your painting is done! Leave it on our racks to dry, perhaps create another one. Pick them up after 2 days and be proud of your new masterpieces!</p>
+        </div>
+        </div>
+        <!--  end -->
+    </div>
+    </div>
+</section><p>
+<section class="testi-sec">
+    <div class="shape top"><img src="https://wildpainthouse.com/public/assets/images/svg/testi-shape1.svg" class="img"></div>
+    <div class="shape bottom"><img src="https://wildpainthouse.com/public/assets/images/svg/testi-shape2.svg" class="img"></div>
+    <div class="dot bottom-dot">
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <img src="https://wildpainthouse.com/public/assets/images/svg/testi-dot2.svg" alt="img">
+    </div>
+    <div class="dot top-dot">
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <img src="https://wildpainthouse.com/public/assets/images/svg/testi-dot1.svg" alt="img">
+    </div>
+    <div class="container">
+    <div class="row">
+        <div class="col-12">
+        <div class="section-title wow bounceInLeft" data-wow-delay="0.1s">
+            <h2>Our customers speak
+            <span class="paint-icon left wow zoomIn" data-wow-duration="0.1s" data-wow-delay="0.9s">
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <img src="https://wildpainthouse.com/public/assets/images/svg/orange-paint-icon.svg">
+            </span>
+            </h2>
+        </div>
+        </div>
+        <div class="col-lg-11 col-12 mx-auto">
+        <div class="testi-slider wow bounceIn" data-wow-delay="0.4s">
+            <div class="paint-icon2">
+            <span class="drop"></span>
+            <span class="drop"></span>
+            <span class="drop"></span>
+            <span class="drop"></span>
+            <img src="https://wildpainthouse.com/public/assets/images/svg/pink-dot2.svg" alt="img">
+            </div>
+            <div class="swiper slider">
+            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                <a href="#" class="testi-bx">
+                    <div class="testi-text">
+                    <p>We had so much fun splashing canvases and each other - the whole experience was filled with laughter and playfulness! Loved it! The staff was friendly and helpful, plus offered us to play our own music. The paint is safe and cleans up very easily (we did UV). Thank you for offering new freeing experiences like this! Recommend it to everyone</p>
+                    </div>
+                    <h3 class="designation">Julie Pollet</h3>
+                </a>
+                </div>
+                                <div class="swiper-slide">
+                <a href="#" class="testi-bx">
+                    <div class="testi-text">
+                    <p>We went there as a family.. Every one of us enjoyed ourselves. Our little angel was having endless creativity moments... Hubby and I got an opportunity to unleash the creativity in us and it was added fun as the canvas had different sizes for the whole family to paint together... Greatly recommend the place for great fun filled experience.</p>
+                    </div>
+                    <h3 class="designation">Puvaneswary R Ramdas</h3>
+                </a>
+                </div>
+                                <div class="swiper-slide">
+                <a href="#" class="testi-bx">
+                    <div class="testi-text">
+                    <p>I had an amazing time at Wild Paint House. Amazing staff to work with and they help make my proposal plan smooth and easy. On top of that, they have great space to spend time having fun with friends/families. Thanks guys for the experience!</p>
+                    </div>
+                    <h3 class="designation">Muhammad Syahir</h3>
+                </a>
+                </div>
+                                <div class="swiper-slide">
+                <a href="#" class="testi-bx">
+                    <div class="testi-text">
+                    <p>For kids at heart! You will love this place! Perfect for team building and team bonding activities, corporate events or even if you just want to destress after putting in a hard day&#039;s work! Check it out!</p>
+                    </div>
+                    <h3 class="designation">Marc Cometa</h3>
+                </a>
+                </div>
+                                <div class="swiper-slide">
+                <a href="#" class="testi-bx">
+                    <div class="testi-text">
+                    <p>It&#039;s our first experience with Spin art and both Adults and Children love it!! Everyone is asking when the next session is! Come as a blank canvas, make a mess and let the kinetic energy do the work. As parents, we love to see how each child showcase their personality through the way they opt to create their art pieces.</p>
+                    </div>
+                    <h3 class="designation">Seraphina</h3>
+                </a>
+                </div>
+                                <div class="swiper-slide">
+                <a href="#" class="testi-bx">
+                    <div class="testi-text">
+                    <p>Fantastic experience. Suitable for newbies or pros alike. Great for team bonding or couple bonding or solo-destressing. Kid friendly environment and paint! Discovered my new hobby :D</p>
+                    </div>
+                    <h3 class="designation">Ryan Tan</h3>
+                </a>
+                </div>
+                                <div class="swiper-slide">
+                <a href="#" class="testi-bx">
+                    <div class="testi-text">
+                    <p>Had an amazing experience at Wild Paint House! There are plenty of art jamming studios but nothing quite as wild, fun, and energizing as what these folks are offering</p>
+                    </div>
+                    <h3 class="designation">Melvyn Koe</h3>
+                </a>
+                </div>
+                                <div class="swiper-slide">
+                <a href="#" class="testi-bx">
+                    <div class="testi-text">
+                    <p>The vibe and place is amazing, made our experience so much fun. To destress, this place is a must.</p>
+                    </div>
+                    <h3 class="designation">Mariza Moidy</h3>
+                </a>
+                </div>
+                                <!-- end  -->                
+            </div>
+            </div>
+            <!-- buttons -->
+            <div class="btn-wrap">
+            <div class="prev btn wow bounceInLeft" data-wow-delay="0.6s">
+                <img class="svg" src="https://wildpainthouse.com/public/assets/images/svg/left-arrow.svg" alt="Right Arrow">
+            </div>
+            <div class="next btn wow bounceInRight" data-wow-delay="0.6s">
+                <img class="svg" src="https://wildpainthouse.com/public/assets/images/svg/right-arrow.svg" alt="Right Arrow">
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</section><section class="client-sec">
+    <div class="dot bottom-dot">
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <img src="https://wildpainthouse.com/public/assets/images/svg/event-dot.svg" alt="img">
+    </div>
+    <div class="container-fluid">
+    <div class="col-12">
+        <div class="section-title wow bounceInRight" data-wow-delay="0.1s">
+        <h2>Featured in
+            <span class="paint-icon top wow zoomIn" data-wow-duration="0.1s" data-wow-delay="0.9s">
+            <span class="drop"></span>
+            <span class="drop"></span>
+            <span class="drop"></span>
+            <span class="drop"></span>
+            <img src="https://wildpainthouse.com/public/assets/images/svg/orange-paint-icon.svg">
+            </span>
+        </h2>
+        </div>
+    </div>
+    <div class="client-slider  wow bounceInLeft">
+        <div class="swiper slider">
+            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                    <div class="client-img">
+                        <img src="https://wildpainthouse.com/public/uploads/featuredOnLogos/Client1_1671521225.png" alt="img">
+                    </div>
+                </div>
+                                <div class="swiper-slide">
+                    <div class="client-img">
+                        <img src="https://wildpainthouse.com/public/uploads/featuredOnLogos/Client2_1671521256.png" alt="img">
+                    </div>
+                </div>
+                                <div class="swiper-slide">
+                    <div class="client-img">
+                        <img src="https://wildpainthouse.com/public/uploads/featuredOnLogos/Client3_1671521268.png" alt="img">
+                    </div>
+                </div>
+                            </div>
+        </div>
+    </div>
+    </div>
+</section><section class="event-sec"> 
+    <div class="shape top"><img src="https://wildpainthouse.com/public/assets/images/svg/event-shape1.svg" alg="img"></div>
+    <div class="shape bottom"><img src="https://wildpainthouse.com/public/assets/images/svg/event-shape2.svg" alg="img"></div>
+    <div class="dot bottom-dot">
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <img src="https://wildpainthouse.com/public/assets/images/svg/event-dot2.svg" alt="img">
+    </div>
+    <div class="container">
+    <div class="row">
+        <div class="col-12">
+        <div class="section-title  wow bounceInLeft" data-wow-delay="0.1s">
+            <h2>Our Events
+            <span class="paint-icon left wow zoomIn" data-wow-duration="0.1s" data-wow-delay="0.9s">
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <img src="https://wildpainthouse.com/public/assets/images/svg/orange-paint-icon.svg">
+            </span>
+            </h2>
+        </div>
+        </div>
+        <div class="col-12 col-md-8">
+        <a href="https://www.wildpainthouse.com/event/1" class="event-bx  wow rollIn" data-wow-delay="0.2s">
+            <img src="https://wildpainthouse.com/public/uploads/events/Launch of Graffiti sessions_1672312154.jpeg" alt="img">
+            <div class="overlay-text">
+            <h3>Launch of Graffiti sessions</h3>
+                          <p>24 Sat, Dec 2022</p>
+                        </div>
+        </a>
+        </div>
+        <div class="col-12 col-md-4">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-12">
+            <a href="https://www.wildpainthouse.com/event/2" class="event-bx  wow rotateInUpLeft" data-wow-delay="0.4s">
+                <img src="https://wildpainthouse.com/public/uploads/events/Soulfusion Paint Yoga_1672311937.JPG" alt="img">
+                <div class="overlay-text">
+                <h3>Soulfusion Paint Yoga</h3>
+                                  <p>20 Sun, Nov 2022</p>
+                                </div>
+            </a>
+            </div>
+            <div class="col-12 col-sm-6 col-md-12">
+            <a href="https://www.wildpainthouse.com/event/3" class="event-bx wow rotateInUpLeft" data-wow-delay="0.4s">
+                <img src="https://wildpainthouse.com/public/uploads/events/UV Paint party_1671530967.png" alt="img">
+                <div class="overlay-text">
+                <h3>UV Paint Party</h3>
+                                  <p>31 Mon, Oct 2022</p>
+                                </div>
+            </a>
+            </div>
+        </div>
+        </div>
+        <div class="col-12 text-center">
+        <div class="btn-bubble">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="goo">
+            <defs>
+                <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                <feComposite in="SourceGraphic" in2="goo" />
+                </filter>
+            </defs>
+            </svg>
+            <span class="button--bubble__container">
+            <a href="https://www.wildpainthouse.com/events" class="button button--bubble">
+                VIEW ALL EVENTS
+            </a>
+            <span class="button--bubble__effect-container">
+                <span class="circle top-left"></span>
+                <span class="circle top-left"></span>
+                <span class="circle top-left"></span>
+                <span class="button effect-button"></span>
+                <span class="circle bottom-right"></span>
+                <span class="circle bottom-right"></span>
+                <span class="circle bottom-right"></span>
+            </span>
+            </span>
+        </div>
+        </div>
+    </div>
+    </div>
+</section><section class="blog-sec">
+    <div class="shape bottom"><img src="https://wildpainthouse.com/public/assets/images/svg/blog-shape.svg" alg="img"></div>
+    <div class="dot bottom-dot">
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <img src="https://wildpainthouse.com/public/assets/images/svg/blog-dot2.svg" alt="img">
+    </div>
+    <div class="dot top-dot">
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <span class="drop"></span>
+    <img src="https://wildpainthouse.com/public/assets/images/svg/blog-dot1.svg" alt="img">
+    </div>
+    <div class="container">
+    <div class="row">
+        <div class="col-12">
+        <div class="section-title wow bounceInLeft" data-wow-delay="0.4s">
+            <h2>BLOGS TO READ
+            <span class="paint-icon top wow zoomIn" data-wow-duration="0.1s" data-wow-delay="0.9s">
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <img src="https://wildpainthouse.com/public/assets/images/svg/orange-paint-icon.svg">
+            </span>
+            </h2>
+        </div>
+        </div>
+                <div class="col-12 col-sm-6 col-md-4 wow flipInX" data-wow-delay="0.3s">
+        <a href="https://www.wildpainthouse.com/blog/14" class="blog-bx">
+            <div class="blog-img">
+            <img src="https://wildpainthouse.com/public/uploads/blogs/_1690300361.jpg" alt="img">
+            </div>
+            <div class="blog-text">
+            <h3>Exploring Fluid Art in Dubai: Acrylic Pour and Resin Art Tray</h3>
+            <p>Dubai&#039;s art scene is constantly evolving, and one technique that has gained immense popularity is fluid art. This captivating form of art allows art enthusiasts to create mesmerizing patterns and vibrant designs using various mediums. Two prominent techniques within fluid art are acrylic pour and resin art tray. In this article, we will delve into the world of fluid art in Dubai, exploring these techniques in detail and showcasing the creative opportunities they offer.</p>
+            <div class="blog-bottom">
+                <p>25 Jul, 2023</p>
+                <div class="arrow-img">
+                <img src="https://wildpainthouse.com/public/assets/images/svg/arrow.svg">
+                </div>
+            </div>
+            </div>
+        </a>
+        </div>
+                <div class="col-12 col-sm-6 col-md-4 wow flipInX" data-wow-delay="0.3s">
+        <a href="https://www.wildpainthouse.com/blog/13" class="blog-bx">
+            <div class="blog-img">
+            <img src="https://wildpainthouse.com/public/uploads/blogs/_1690298379.jpg" alt="img">
+            </div>
+            <div class="blog-text">
+            <h3>Paint Nights in Dubai: Unleash Your Creativity with NEON Glow in The Dark Experiences at Wild Paint House</h3>
+            <p>Dubai, a city known for its vibrant nightlife and thriving art scene, offers a unique and exciting way to unleash your creativity - Paint Nights. These events provide the perfect opportunity to relax, socialize, and express yourself through art. And when it comes to Paint Nights in Dubai, one place stands out from the rest - Wild Paint House. Located in the heart of the city, Wild Paint House offers an extraordinary painting experience under NEON Glow in The Dark lights.</p>
+            <div class="blog-bottom">
+                <p>25 Jul, 2023</p>
+                <div class="arrow-img">
+                <img src="https://wildpainthouse.com/public/assets/images/svg/arrow.svg">
+                </div>
+            </div>
+            </div>
+        </a>
+        </div>
+                <div class="col-12 col-sm-6 col-md-4 wow flipInX" data-wow-delay="0.3s">
+        <a href="https://www.wildpainthouse.com/blog/12" class="blog-bx">
+            <div class="blog-img">
+            <img src="https://wildpainthouse.com/public/uploads/blogs/_1690297267.jpg" alt="img">
+            </div>
+            <div class="blog-text">
+            <h3>Discover the Best Art Classes, Painting Classes, and Art Workshops in Dubai</h3>
+            <p>Dubai, known for its vibrant culture and thriving art scene, offers a wide range of opportunities for individuals looking to explore their creative side. Whether you&#039;re a beginner or an experienced artist, there are plenty of art classes, painting classes, and workshops available to enhance your skills and unleash your creativity. In this article, we will delve into the top choices for art enthusiasts in Dubai, highlighting the best studios and workshops that the city has to offer.</p>
+            <div class="blog-bottom">
+                <p>25 Jul, 2023</p>
+                <div class="arrow-img">
+                <img src="https://wildpainthouse.com/public/assets/images/svg/arrow.svg">
+                </div>
+            </div>
+            </div>
+        </a>
+        </div>
+                <!-- end  -->
+       
+        <div class="col-12 text-center">
+        <div class="btn-bubble">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="goo">
+            <defs>
+                <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                <feComposite in="SourceGraphic" in2="goo" />
+                </filter>
+            </defs>
+            </svg>
+            <span class="button--bubble__container">
+            <a href="https://www.wildpainthouse.com/blogs" class="button button--bubble">
+                VIEW ALL blogs
+            </a>
+            <span class="button--bubble__effect-container">
+                <span class="circle top-left"></span>
+                <span class="circle top-left"></span>
+                <span class="circle top-left"></span>
+                <span class="button effect-button"></span>
+                <span class="circle bottom-right"></span>
+                <span class="circle bottom-right"></span>
+                <span class="circle bottom-right"></span>
+            </span>
+            </span>
+        </div>
+        </div>
+    </div>
+    </div>
+</section></p><script async="" src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@16.1.0/dist/lazyload.min.js"></script><script>
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy"
+  };
+
+</script>
+
+
+    <style>
+     
+      .col-white{
+        color:white !important;
+        font-size: 18px;
+        font-family: 'Open Sans', sans-serif !important;
+        font-weight: 300 !important;
+      }
+    </style>
+    
+    <section class="intsagram-sec home">
+        <div class="section-title wow fadeInDown" data-wow-delay="0.1s">
+        <h2>get socially wild
+            <span class="paint-icon left wow zoomIn" data-wow-duration="0.1s" data-wow-delay="0.9s">
+            <span class="drop"></span>
+            <span class="drop"></span>
+            <span class="drop"></span>
+            <span class="drop"></span> 
+            <img src="https://wildpainthouse.com/public/assets/images/svg/orange-paint-icon.svg">
+            </span>
+        </h2>
+        <h6><img src="https://wildpainthouse.com/public/assets/images/svg/insta-icon.svg" alt="img">wildpainthouse</h6>
+        </div>
+        <div class="insta-slider wow fadeInDown">
+        <div class="swiper slider">
+            <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="https://www.instagram.com/wildpainthouse/" target="_blank" class="insta-img  wow fadeInLeft" data-wow-delay="0.1s">
+                <img src="https://wildpainthouse.com/public/assets/images/instagram1.png" alt="img">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="https://www.instagram.com/wildpainthouse/" target="_blank" class="insta-img  wow fadeInLeft" data-wow-delay="0.3s">
+                <img src="https://wildpainthouse.com/public/assets/images/instagram2.png" alt="img">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="https://www.instagram.com/wildpainthouse/" target="_blank" class="insta-img  wow fadeInLeft" data-wow-delay="0.5s">
+                <img src="https://wildpainthouse.com/public/assets/images/instagram3.png" alt="img">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="https://www.instagram.com/wildpainthouse/" target="_blank" class="insta-img  wow fadeInLeft" data-wow-delay="0.3s">
+                <img src="https://wildpainthouse.com/public/assets/images/instagram4.png" alt="img">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="https://www.instagram.com/wildpainthouse/" target="_blank" class="insta-img  wow fadeInLeft" data-wow-delay="0.1s">
+                <img src="https://wildpainthouse.com/public/assets/images/instagram5.png" alt="img">
+                </a>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="footer home-footer">
+        <div class="shape bottom"><img src="https://wildpainthouse.com/public/assets/images/svg/footer-shape.svg" class="img" class="svg">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-4">
+                <div class="footer-div wow fadeInDown" data-wow-delay="0.1s">
+                    <h2>cONTACT</h2>
+                    <ul class="footer-addr">
+                      <li><a href="#"><img src="https://wildpainthouse.com/public/assets/images/svg/location-icon.svg" alt="img">Warehouse 1,
+                          Al Marabea&rsquo; Street, Al Quoz 1,
+                          Dubai</a></li>
+                      <li><a href="https://goo.gl/maps/f3WRE7cgYNUQEq579" target="_blank"><img src="https://wildpainthouse.com/public/assets/images/svg/direction-icon.svg" alt="img">Get
+                          Direction</a></li>
+                    </ul>
+                    <div class="contact-sec" style="background: none;padding-bottom:0px;color:white !important;">
+                      <div class="adr-bx">
+                        <ul class="timings">
+                          <li class="col-white"><span class="day col-white">MON</span><span>:</span>14:00-22:00</li>
+                          <li class="col-white"><span class="day col-white">TUE</span><span>:</span>14:00-22:00</li>
+                          <li class="col-white"><span class="day col-white">WED</span><span>:</span>14:00-22:00</li>
+                          <li class="col-white"><span class="day col-white">THU</span><span>:</span>14:00-22:00</li>
+                          <li class="col-white"><span class="day col-white">FRI</span><span>:</span>14:00-22:00</li>
+                          <li class="col-white"><span class="day col-white">SAT</span><span>:</span>10:00-22:00</li>
+                          <li class="col-white"><span class="day col-white">SUN</span><span>:</span>10:00-22:00</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <ul class="call-details">
+                      <li><img src="https://wildpainthouse.com/public/assets/images/svg/whatapp-icon.svg" alt="img"><a><span>+971 54 505 7944</span></a></li>
+                      <li><a href="mailto:hello@wildpainthouse.com"><img src="https://wildpainthouse.com/public/assets/images/svg/mail-icon.svg" alt="img"><span>hello@wildpainthouse.com</span></a></li>
+                      </ul>
+                      <ul class="social-link">
+                      <li><a href="https://www.instagram.com/wildpainthouse/" target="_blank"><img src="https://wildpainthouse.com/public/assets/images/svg/social-media-icon1.svg" alt="img"></a></li>
+                      <li><a href="https://www.facebook.com/wildpainthouse" target="_blank"><img src="https://wildpainthouse.com/public/assets/images/svg/social-media-icon2.svg" alt="img"></a></li>
+                      <li><a href="https://www.tiktok.com/@wildpainthouse" target="_blank"><img src="https://wildpainthouse.com/public/assets/images/svg/social-media-icon4.svg" alt="img"></a></li>
+                    </ul>
+                
+</div>
+                
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                <div class="footer-div wow fadeInDown" data-wow-delay="0.2s">
+                    <h2>QUICK LINKS</h2>
+                                        <ul class="footer-link wow fadeInDown" data-wow-delay="0.2s">
+                                                                <li><a href="https://www.wildpainthouse.com/menu/experience">Experiences</a></li> 
+                                                                                      <li><a href="https://www.wildpainthouse.com/partygroup/birthdayparty">Birthday Parties</a></li> 
+                                                                                      <li><a href="https://www.wildpainthouse.com/faq">FAQ</a></li> 
+                                                                                      <li><a href="https://www.wildpainthouse.com/events">Events</a></li> 
+                                                                                      <li><a href="https://www.wildpainthouse.com/blogs">Blogs</a></li> 
+                                                                                      <li><a href="https://www.wildpainthouse.com/home">Home</a></li> 
+                                                              </ul>
+                    <ul class="footer-link wow fadeInDown" data-wow-delay="0.2s">
+                                                                <li><a href="https://www.wildpainthouse.com/aboutus">About Us</a></li> 
+                                                                                      <li><a href="https://www.wildpainthouse.com/contactus">Contact Us</a></li> 
+                                                                                      <li><a href="https://www.wildpainthouse.com/franchise">Franchise</a></li> 
+                                                              <li><a class="popup1" href="#">Terms & Conditions</a></li>
+                    <li><a class="popup2" href="#">Privacy Policy</a></li>
+                    <li><a class="popup3" href="#">Cookie policy</a></li>
+                    </ul>
+                </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                <div class="footer-div wow fadeInDown" data-wow-delay="0.3s">
+                    <h2>Stay Updated</h2>
+                    <p>Join our newsletter and be the first to be notified of our latest news and promotions.</p>
+                    <form id="newsletter">
+                      <div class="input-group">
+                      <input type="email" id="email" class="form-control" placeholder="Enter Your Email" aria-label="Username" aria-describedby="basic-addon1">
+                      <button type="submit" class="input-group-text"><span id="basic-addon1"><img src="https://wildpainthouse.com/public/assets/images/svg/up-arrow.svg" alt="img"></span></button>
+                      </div>
+                    </form>
+                </div>
+                </div>
+            </div> 
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <p class=" wow fadeInUp" data-wow-delay="0.2s">All Rights Reserved Wild Paint House © 2023</p>
+                    </div>          
+                </div>
+            </div> 
+      </div>
+    </section>
+    
+    <!--  banner section --><a href="https://wa.me/971561459689" target="_blank" class="whatpp-icon"><img src="https://wildpainthouse.com/public/assets/images/svg/Whatsapp.svg"></a><div id="TermsandConditions" class="TermsandConditions">
+  <div id="popUptyp1" class="popUptyp1">
+    <div id="popContainer">
+      <div class="container">
+        <div class="col-12">
+          <div class="wheel-card">
+            <div id="close"><img src="https://wildpainthouse.com/public/assets/images/svg/close-icon.svg" class="svg"></div>
+
+            <div class="popup-content">
+              <h2>General Terms</h2>
+
+              <p>By accessing and placing an order with Wild Paint House, you confirm that you are in
+                agreement with and bound by the terms of service outlined below. These terms apply
+                to the entire website and any email or other type of communication between you and
+                Wild Paint House.</p>
+              <p>Under no circumstances shall Wild Paint House team be liable for any direct,
+                indirect, special, incidental or consequential damages, including, but not limited
+                to, loss of data or profit, arising out of the use, or the inability to use, the
+                materials on this site, even if Wild Paint House team or an authorized
+                representative has been advised of the possibility of such damages. If your use of
+                materials from this site results in the need for servicing, repair or correction of
+                equipment or data, you assume any costs thereof.</p>
+              <p>Wild Paint House will not be responsible for any outcome that may occur during the
+                course of usage of our resources. We reserve the rights to change prices and revise
+                the resources usage policy in any moment.</p>
+              <p>LicenseWild Paint House grants you a revocable, non-exclusive, non-transferable,
+                limited license to download, install and use the website strictly in accordance with
+                the terms of this Agreement.</p>
+              <p>Definitions and key termsTo help explain things as clearly as possible in this Terms
+                of Service, every time any of these terms are referenced, are strictly defined as:
+              </p>
+              <p>Cookie: small amount of data generated by a website and saved by your web browser. It
+                is used to identify your browser, provide analytics, remember information about you
+                such as your language preference or login information.Company: when this terms
+                mention &ldquo;Company,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our,&rdquo; it refers to Wild Paint House that is
+                responsible for your information under this Terms of Service.Device: any internet
+                connected device such as a phone, tablet, computer or any other device that can be
+                used to visit Wild Paint House and use the services.Service: refers to the service
+                provided by Wild Paint House as described in the relative terms (if available) and
+                on this platform.Third-party service: refers to advertisers, contest sponsors,
+                promotional and marketing partners, and others who provide our content or whose
+                products or services we think may interest you.Website: Wild Paint House&rsquo;s site,
+                which can be accessed via this URL: https://wildpainthouse.comYou: a person or
+                entity that is registered with Wild Paint House to use the Services.RestrictionsYou
+                agree not to, and you will not permit others to:</p>
+              <p>License, sell, rent, lease, assign, distribute, transmit, host, outsource, disclose
+                or otherwise commercially exploit the website or make the platform available to any
+                third party.Modify, make derivative works of, disassemble, decrypt, reverse compile
+                or reverse engineer any part of the website.Remove, alter or obscure any proprietary
+                notice (including any notice of copyright or trademark) of Wild Paint House or its
+                affiliates, partners, suppliers or the licensors of the website.Return and Refund
+                PolicyIf, for any reason, You are not completely satisfied with any good or service
+                that we provide, don&rsquo;t hesitate to contact us and we will discuss any of the issues
+                you are going through with our product.</p>
+              <p>Your SuggestionsAny feedback, comments, ideas, improvements or suggestions
+                (collectively, &ldquo;Suggestions&rdquo;) provided by you to Wild Paint House with respect to
+                the website shall remain the sole and exclusive property of Wild Paint House.</p>
+              <p>Wild Paint House shall be free to use, copy, modify, publish, or redistribute the
+                Suggestions for any purpose and in any way without any credit or any compensation to
+                you.</p>
+              <p>Your ConsentBy using our site, registering an account, or making a purchase, you
+                consent to this Terms of Service.</p>
+              <p>Links to Other WebsitesThis Terms of Service applies only to the Services. The
+                Services may contain links to other websites not operated or controlled by Wild
+                Paint House. We are not responsible for the content, accuracy or opinions expressed
+                in such websites, and such websites are not investigated, monitored or checked for
+                accuracy or completeness by us. Please remember that when you use a link to go from
+                the Services to another website, our Terms of Service are no longer in effect. Your
+                browsing and interaction on any other website, including those that have a link on
+                our platform, is subject to that website&rsquo;s own rules and policies. Such third
+                parties may use their own cookies or other methods to collect information about you.
+              </p>
+              <p>CookiesWild Paint House uses &ldquo;Cookies&rdquo; to identify the areas of our website that you
+                have visited. A Cookie is a small piece of data stored on your computer or mobile
+                device by your web browser. We use Cookies to personalize the Content that you see
+                on our website. Most web browsers can be set to disable the use of Cookies. However,
+                if you disable Cookies, you may not be able to access functionality on our website
+                correctly or at all. We never place Personally Identifiable Information in Cookies.
+                By using our site, registering an account, or making a purchase, you consent to the
+                fact that we use cookies.</p>
+              <p>Changes To Our Terms of ServiceYou acknowledge and agree that Wild Paint House may
+                stop (permanently or temporarily) providing the Service (or any features within the
+                Service) to you or to users generally at Wild Paint House&rsquo;s sole discretion, without
+                prior notice to you. You may stop using the Service at any time. You do not need to
+                specifically inform Wild Paint House when you stop using the Service. You
+                acknowledge and agree that if Wild Paint House disables access to your account, you
+                may be prevented from accessing the Service, your account details or any files or
+                other materials which is contained in your account.</p>
+              <p>If we decide to change our Terms of Service, we will post those changes on this page,
+                and/or update the Terms of Service modification date below.</p>
+              <p>Modifications to Our websiteWild Paint House reserves the right to modify, suspend or
+                discontinue, temporarily or permanently, the website or any service to which it
+                connects, with or without notice and without liability to you.</p>
+              <p>Updates to Our websiteWild Paint House may from time to time provide enhancements or
+                improvements to the features/ functionality of the website, which may include
+                patches, bug fixes, updates, upgrades and other modifications (&ldquo;Updates&rdquo;).</p>
+              <p>Updates may modify or delete certain features and/or functionalities of the website.
+                You agree that Wild Paint House has no obligation to (i) provide any Updates, or
+                (ii) continue to provide or enable any particular features and/or functionalities of
+                the website to you.</p>
+              <p>You further agree that all Updates will be (i) deemed to constitute an integral part
+                of the website, and (ii) subject to the terms of service of this Agreement.</p>
+              <p>Third-Party ServicesWe may display, include or make available third-party content
+                (including data, information, applications and other products services) or provide
+                links to third-party websites or services (&ldquo;Third- Party Services&rdquo;).</p>
+              <p>You acknowledge and agree that Wild Paint House shall not be responsible for any
+                Third-Party Services, including their accuracy, completeness, timeliness, validity,
+                copyright compliance, legality, decency, quality or any other aspect thereof. Wild
+                Paint House does not assume and shall not have any liability or responsibility to
+                you or any other person or entity for any Third-Party Services.</p>
+              <p>Third-Party Services and links thereto are provided solely as a convenience to you
+                and you access and use them entirely at your own risk and subject to such third
+                parties&rsquo; terms of service.</p>
+              <p>Term and TerminationThis Agreement shall remain in effect until terminated by you or
+                Wild Paint House.</p>
+              <p>Wild Paint House may, in its sole discretion, at any time and for any or no reason,
+                suspend or terminate this Agreement with or without prior notice.</p>
+              <p>This Agreement will terminate immediately, without prior notice from Wild Paint
+                House, in the event that you fail to comply with any provision of this Agreement.
+                You may also terminate this Agreement by deleting the website and all copies thereof
+                from your computer.</p>
+              <p>Upon termination of this Agreement, you shall cease all use of the website and delete
+                all copies of the website from your computer.</p>
+              <p>Termination of this Agreement will not limit any of Wild Paint House&rsquo;s rights or
+                remedies at law or in equity in case of breach by you (during the term of this
+                Agreement) of any of your obligations under the present Agreement.</p>
+              <p>IndemnificationYou agree to indemnify and hold Wild Paint House and its parents,
+                subsidiaries, affiliates, officers, employees, agents, partners and licensors (if
+                any) harmless from any claim or demand, including reasonable attorneys&rsquo; fees, due to
+                or arising out of your: (a) use of the website; (b) violation of this Agreement or
+                any law or regulation; or (c) violation of any right of a third party.</p>
+              <p>No WarrantiesThe website is provided to you &ldquo;AS IS&rdquo; and &ldquo;AS AVAILABLE&rdquo; and with all
+                faults and defects without warranty of any kind. To the maximum extent permitted
+                under applicable law, Wild Paint House, on its own behalf and on behalf of its
+                affiliates and its and their respective licensors and service providers, expressly
+                disclaims all warranties, whether express, implied, statutory or otherwise, with
+                respect to the website, including all implied warranties of merchantability, fitness
+                for a particular purpose, title and non-infringement, and warranties that may arise
+                out of course of dealing, course of performance, usage or trade practice. Without
+                limitation to the foregoing, Wild Paint House provides no warranty or undertaking,
+                and makes no representation of any kind that the website will meet your
+                requirements, achieve any intended results, be compatible or work with any other
+                software, , systems or services, operate without interruption, meet any performance
+                or reliability standards or be error free or that any errors or defects can or will
+                be corrected.</p>
+              <p>Without limiting the foregoing, neither Wild Paint House nor any Wild Paint House&rsquo;s
+                provider makes any representation or warranty of any kind, express or implied: (i)
+                as to the operation or availability of the website, or the information, content, and
+                materials or products included thereon; (ii) that the website will be uninterrupted
+                or error-free; (iii) as to the accuracy, reliability, or currency of any information
+                or content provided through the website; or (iv) that the website, its servers, the
+                content, or e-mails sent from or on behalf of Wild Paint House are free of viruses,
+                scripts, trojan horses, worms, malware, timebombs or other harmful components.</p>
+              <p>Some jurisdictions do not allow the exclusion of or limitations on implied warranties
+                or the limitations on the applicable statutory rights of a consumer, so some or all
+                of the above exclusions and limitations may not apply to you.</p>
+              <p>Limitation of LiabilityNotwithstanding any damages that you might incur, the entire
+                liability of Wild Paint House and any of its suppliers under any provision of this
+                Agreement and your exclusive remedy for all of the foregoing shall be limited to the
+                amount actually paid by you for the website.</p>
+              <p>To the maximum extent permitted by applicable law, in no event shall Wild Paint House
+                or its suppliers be liable for any special, incidental, indirect, or consequential
+                damages whatsoever (including, but not limited to, damages for loss of profits, for
+                loss of data or other information, for business interruption, for personal injury,
+                for loss of privacy arising out of or in any way related to the use of or inability
+                to use the website, third-party software and/or third-party hardware used with the
+                website, or otherwise in connection with any provision of this Agreement), even if
+                Wild Paint House or any supplier has been advised of the possibility of such damages
+                and even if the remedy fails of its essential purpose.</p>
+              <p>Some states/jurisdictions do not allow the exclusion or limitation of incidental or
+                consequential damages, so the above limitation or exclusion may not apply to you.
+              </p>
+              <p>SeverabilityIf any provision of this Agreement is held to be unenforceable or
+                invalid, such provision will be changed and interpreted to accomplish the objectives
+                of such provision to the greatest extent possible under applicable law and the
+                remaining provisions will continue in full force and effect.</p>
+              <p>WaiverExcept as provided herein, the failure to exercise a right or to require
+                performance of an obligation under this Agreement shall not effect a party&rsquo;s ability
+                to exercise such right or require such performance at any time thereafter nor shall
+                be the waiver of a breach constitute waiver of any subsequent breach.</p>
+              <p>Amendments to this AgreementWild Paint House reserves the right, at its sole
+                discretion, to modify or replace this Agreement at any time. If a revision is
+                material we will provide at least 30 days&rsquo; notice prior to any new terms taking
+                effect. What constitutes a material change will be determined at our sole
+                discretion.</p>
+              <p>By continuing to access or use our website after any revisions become effective, you
+                agree to be bound by the revised terms. If you do not agree to the new terms, you
+                are no longer authorized to use Wild Paint House.</p>
+              <p>Entire AgreementThe Agreement constitutes the entire agreement between you and Wild
+                Paint House regarding your use of the website and supersedes all prior and
+                contemporaneous written or oral agreements between you and Wild Paint House.</p>
+              <p>You may be subject to additional terms of service that apply when you use or purchase
+                other Wild Paint House&rsquo;s services, which Wild Paint House will provide to you at the
+                time of such use or purchase.</p>
+              <p>DisclaimerWild Paint House is not responsible for any content, code or any other
+                imprecision.</p>
+              <p>Wild Paint House does not provide warranties or guarantees.</p>
+              <p>In no event shall Wild Paint House be liable for any special, direct, indirect,
+                consequential, or incidental damages or any damages whatsoever, whether in an action
+                of contract, negligence or other tort, arising out of or in connection with the use
+                of the Service or the contents of the Service. The Company reserves the right to
+                make additions, deletions, or modifications to the contents on the Service at any
+                time without prior notice.</p>
+              <p>Contact Us</p>
+              <p>Don&rsquo;t hesitate to contact us if you have any questions.</p>
+              <p>Via Email: info@wildpainthouse.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><div id="Privacy" class="Privacy ">
+  <div id="popUptyp2" class="popUptyp2">
+    <div id="popContainer">
+      <div class="container">
+        <div class="col-12">
+
+          <div class="wheel-card">
+            <div id="close"><img src="https://wildpainthouse.com/public/assets/images/svg/close-icon.svg" class="svg"></div>
+            <div class="popup-content">
+              <h3>Privacy Policy</h3>
+              <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
+              <p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the Privacy Policy Generator.</p>
+              <h2>Interpretation and Definitions</h2>
+              <p><b>Interpretation</b></p>
+              <p>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
+              <p><b>Definitions</b></p>
+              <p>For the purposes of this Privacy Policy:</p>
+              <p><b>Account</b> means a unique account created for You to access our Service or parts of our Service.</p>
+              <p><b>Company</b> (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Wild Paint House Events Managing &amp; Organizing LLC, Warehouse 1, Al Marabea Street, Al Quoz 1, Dubai.</p>
+              <p><b>Cookies</b> are small files that are placed on Your computer, mobile device or any other device by a website, containing the details of Your browsing history on that website among its many uses.</p>
+              <p><b>Country</b> refers to: United Arab Emirates</p>
+              <p><b>Device</b> means any device that can access the Service such as a computer, a cellphone or a digital tablet.</p>
+              <p><b>Personal Data</b> is any information that relates to an identified or identifiable individual.</p>
+              <p><b>Service</b> refers to the Website.</p>
+              <p><b>Service Provider</b> means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used</p>
+              <p><b>Usage Data</b> refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit).</p>
+              <p><b>Website</b>  refers to Wild Paint House, accessible from www.wildpainthouse.com.</p>
+              <p><b>You</b> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p>
+
+              <h2>Collecting and Using Your Personal Data</h2>
+              <h4><b>Types of Data Collected</b></h4>
+              <p><b>Personal Data</b></p>
+              <p>While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:</p>
+              <p style="margin-left:1rem;">Email address</p>
+              <p style="margin-left:1rem;">First name and last name</p>
+              <p style="margin-left:1rem;">Usage Data</p>
+              <br>
+              <p><b>Usage Data</b></p>
+              <p>Usage Data is collected automatically when using the Service.</p>
+              <p>Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
+              <p>When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.</p>
+              <p>We may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.</p>
+              <p><b>Tracking Technologies and Cookies</b></p>
+              <p>We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyze Our Service. The technologies We use may include:</p>
+              <p><b>Cookies or Browser Cookies.</b>A cookie is a small file placed on Your Device. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You do not accept Cookies, You may not be able to use some parts of our Service. Unless you have adjusted Your browser setting so that it will refuse Cookies, our Service may use Cookies.</p>
+              <p><b>Web Beacons.</b>Certain sections of our Service and our emails may contain small electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit the Company, for example, to count users who have visited those pages or opened an email and for other related website statistics (for example, recording the popularity of a certain section and verifying system and server integrity).</p>
+              <p>Cookies can be "Persistent" or "Session" Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser. Learn more about cookies on the Privacy Policies website article.</p>
+              <p>We use both Session and Persistent Cookies for the purposes set out below:</p>
+              <p style="margin-left:1rem;"><b>Necessary / Essential Cookies</b></p>
+              <p style="margin-left:1rem;">Type: Session Cookies</p>
+              <p style="margin-left:1rem;">Administered by: Us</p>
+              <p style="margin-left:1rem;">Purpose: These Cookies are essential to provide You with services available through the Website and to enable You to use some of its features. They help to authenticate users and prevent fraudulent use of user accounts. Without these Cookies, the services that You have asked for cannot be provided, and We only use these Cookies to provide You with those services.</p>
+              <p style="margin-left:1rem;"><b>Cookies Policy / Notice Acceptance Cookies</b></p>
+              <p style="margin-left:1rem;">Type: Persistent Cookies</p>
+              <p style="margin-left:1rem;">Administered by: Us</p>
+              <p style="margin-left:1rem;">Purpose: These Cookies identify if users have accepted the use of cookies on the Website.</p>
+              <p style="margin-left:1rem;"><b>Functionality Cookies</b></p>
+              <p style="margin-left:1rem;">Type: Persistent Cookies</p>
+              <p style="margin-left:1rem;">Administered by: Us</p>
+              <p>For more information about the cookies we use and your choices regarding cookies, please visit our Cookies Policy or the Cookies section of our Privacy Policy.</p>
+
+
+              <h4><b>Use of Your Personal Data</b></h4>
+              <p>The Company may use Personal Data for the following purposes:</p>
+              <p style="margin-left:1rem;"><b>To provide and maintain our Service,</b> including to monitor the usage of our Service.</p>
+              <p style="margin-left:1rem;"><b>To manage Your Account:</b>  to manage Your registration as a user of the Service. The Personal Data You provide can give You access to different functionalities of the Service that are available to You as a registered user.</p>
+              <p style="margin-left:1rem;"><b>For the performance of a contract:</b> the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased or of any other contract with Us through the Service.</p>
+              <p style="margin-left:1rem;"><b>To contact You:</b> To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application's push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.</p>
+              <p style="margin-left:1rem;"><b>To provide You </b> with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless You have opted not to receive such information.</p>
+              <p style="margin-left:1rem;"><b>To manage Your requests: </b> To attend and manage Your requests to Us.</p>
+              <p style="margin-left:1rem;"><b>For business transfers: </b> We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience.</p>
+              <p>We may share Your personal information in the following situations:</p>
+
+
+              <p><b>With Service Providers:</b> We may share Your personal information with Service Providers to monitor and analyze the use of our Service, to contact You.</p>
+              <p><b>For business transfers:</b> We may share or transfer Your personal information in connection with, or during negotiations of, any merger, sale of Company assets, financing, or acquisition of all or a portion of Our business to another company.</p>
+              <p><b>With Affiliates:</b> We may share Your information with Our affiliates, in which case we will require those affiliates to honor this Privacy Policy. Affiliates include Our parent company and any other subsidiaries, joint venture partners or other companies that We control or that are under common control with Us.</p>
+              <p><b>With business partners: </b> We may share Your information with Our business partners to offer You certain products, services or promotions.</p>
+              <p><b>With other users: </b> when You share personal information or otherwise interact in the public areas with other users, such information may be viewed by all users and may be publicly distributed outside.</p>
+              <p><b>With Your consent: </b> We may disclose Your personal information for any other purpose with Your consent.</p>
+
+
+              <h4><b>Retention of Your Personal Data</b></h4>
+              <p>The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.</p>
+              <p>The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods.</p>
+
+              <h4><b>Transfer of Your Personal Data</b></h4>
+              <p>Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to &mdash; and maintained on &mdash; computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.</p>
+              <p>Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.</p>
+              <p>The Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.</p>
+
+              <h4><b>Delete Your Personal Data</b></h4>
+              <p>You have the right to delete or request that We assist in deleting the Personal Data that We have collected about You.</p>
+              <p>Our Service may give You the ability to delete certain information about You from within the Service.</p>
+              <p>You may update, amend, or delete Your information at any time by signing in to Your Account, if you have one, and visiting the account settings section that allows you to manage Your personal information. You may also contact Us to request access to, correct, or delete any personal information that You have provided to Us.</p>
+              <p>Please note, however, that We may need to retain certain information when we have a legal obligation or lawful basis to do so.</p>
+
+              <h4><b>Disclosure of Your Personal Data</b></h4>
+              <p><b>Business Transactions</b></p>
+              <p>If the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred. We will provide notice before Your Personal Data is transferred and becomes subject to a different Privacy Policy.</p>
+              <p><b>Law enforcement</b></p>
+              <p>Under certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency).</p>
+              <p><b>Other legal requirements</b></p>
+              <p>The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:</p>
+              <p>Comply with a legal obligation</p>
+              <p>Protect and defend the rights or property of the Company</p>
+              <p>Prevent or investigate possible wrongdoing in connection with the Service</p>
+              <p>Protect the personal safety of Users of the Service or the public</p>
+              <p>Protect against legal liability</p>
+
+              <h4><b>Security of Your Personal Data</b></h4>
+              <p>The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.</p>
+
+              <h2>Children's Privacy</h2>
+              <p>Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.</p>
+              <p>If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.</p>
+
+              <h2>Links to Other Websites</h2>
+              <p>Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.</p>
+              <p>We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
+
+              <h2>Changes to this Privacy Policy</h2>
+              <p>We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.</p>
+              <p>We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the "Last updated" date at the top of this Privacy Policy.</p>
+              <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+
+              <h2>Contact Us</h2>
+              <p>If you have any questions about this Privacy Policy, You can contact us:</p>
+              <p>By email: hello@wildpainthouse.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><div id="cookie" class="cookie ">
+  <div id="popUptyp3" class="popUptyp3">
+    <div id="popContainer">
+      <div class="container">
+        <div class="col-12">
+
+          <div class="wheel-card">
+            <div id="close"><img src="https://wildpainthouse.com/public/assets/images/svg/close-icon.svg" class="svg"></div>
+            <div class="popup-content">
+              <h2>Cookie Policy for Wild Paint House</h2>
+
+              <p> This is the Cookie Policy for Wild Paint House, a website owned and operated by Wild Paint House. This Cookie Policy explains how Wild Paint House uses and
+                protects any information collected through cookies.</p>
+
+              <h2>What Are Cookies</h2>
+
+              <p> Cookies are small text files that are stored on your computer to help Wild Paint House to provide you with a better experience. Cookies can be "persistent" or
+                "session" cookies. Persistent cookies remain on your computer until you delete them. Session cookies are temporary and are deleted when you close your web
+                browser. As is common practice with almost all professional websites this site uses cookies, which are tiny files that are downloaded to your computer, to
+                improve your experience. This page describes what information they gather, how we use it and why we sometimes need to store these cookies. We will also share
+                how you can prevent these cookies from being stored however this may downgrade or 'break' certain elements of the sites functionality.</p>
+
+              <h2>How We Use Cookies</h2>
+
+              <p> We use cookies for a variety of reasons detailed below. Unfortunately in most cases there are no industry standard options for us to choose from.</p>
+
+              <h2>Disabling Cookies</h2>
+
+              <p> You can prevent most of the Cookies from being stored by adjusting the settings on your browser.</p>
+
+              <h2>The Cookies We Set</h2>
+
+              <p> Email newsletters related cookies - This site offers newsletter or email subscription services and cookies may be used to remember if you are already
+                registered and whether to show certain notifications which might only be valid to subscribed/unsubscribed users.</p>
+
+              <p> Forms related cookies - When you submit data to through a form such as those found on contact pages or comment forms cookies may be set to remember your user
+                details for future correspondence.</p>
+
+              <p> Third Party Cookies - In some special cases we also use cookies provided by trusted third parties. The following section details which third party cookies you
+                might encounter through this site.</p>
+
+              <p> This site uses Google Analytics which is one of the most widespread and trusted analytics solution on the web for helping us to understand how you use the
+                site and ways that we can improve your experience. These cookies may track things such as how long you spend on the site and the pages that you visit so we can
+                continue to produce engaging content.</p>
+
+              <p> For more information on Google Analytics cookies, see the official Google Analytics page.</p>
+
+              <p> As we sell products it's important for us to understand statistics about how many of the visitors to our site actually make a purchase and as such this is the
+                kind of data that these cookies will track. This is important to you as it means that we can accurately make business predictions that allow us to monitor our
+                advertising and product costs to ensure the best possible price.</p>
+
+              <p> We also use social media buttons and/or plugins on this site that allow you to connect with your social network in various ways. For these to work the
+                following social media sites including; {List the social networks whose features you have integrated with your site?:12}, will set cookies through our site
+                which may be used to enhance your profile on their site or contribute to the data they hold for various purposes outlined in their respective privacy policies.
+              </p>
+
+              <h2>More Information</h2>
+
+              <p> Hopefully that has clarified things for you and as was previously mentioned if there is something that you aren't sure whether you need or not it's usually
+                safer to leave cookies enabled in case it does interact with one of the features you use on our site.</p>
+
+              <p>For more general information on cookies, please read the Cookies Policy article.</p>
+
+              <p>However if you are still looking for more information then you can contact us through one of our preferred contact methods: Email: info@wildpainthouse.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+    
+    <script src="https://wildpainthouse.com/public/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://wildpainthouse.com/public/assets/js/swiper-bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/9653821f6e.js" crossorigin="anonymous"></script>
+    <script src="https://wildpainthouse.com/public/assets/js/TweenMax.min.js"></script>
+    <script src="https://wildpainthouse.com/public/assets/js/wow.min.js"></script>
+    <script src="https://wildpainthouse.com/public/assets/js/easings.js"></script>
+    <script src="https://wildpainthouse.com/public/assets/js/hamburger-menu.js"></script>
+    <script src="https://wildpainthouse.com/public/assets/js/simpleLightbox.min.js"></script>
+    <script src="https://wildpainthouse.com/public/assets/js/smoke.js"></script>
+    <script src="https://wildpainthouse.com/public/assets/js/custom.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <script src="https://wildpainthouse.com/public/assets/js/parsley.min.js"></script>
+    <script src="https://wildpainthouse.com/public/assets/js/jquery.lazy.min.js"></script>
+
+  </body>
+  <script>
+$(document).ready(function () {
+    $("img").each(function() {
+        $(this).attr('loading','lazy' );
+        $(this).attr('data-src', $(this).attr('src') );
+        $(this).removeAttr('src');
+    });
+});
+
+$(window).on('load', function(){
+    $('img').Lazy();
+});
+
+
+    $('body').on('submit','#newsletter',function(e){
+            e.preventDefault();
+            if($("#newsletter #email").val() == '')
+            {
+              $.dialog({
+                  title: 'Warning!',
+                  content: 'Please Enter email address.',
+              });
+            }
+            var CSRF_TOKEN = 'YYv8jDYpZr6h3jzSJDsjKPpxmOB74un5705Xtvr9';
+            $.ajax({
+                url: 'https://www.wildpainthouse.com/newsletter',                    
+                type: 'POST',
+                data: {_token: CSRF_TOKEN, 
+                        email: $("#newsletter #email").val(),
+                    },
+                dataType: 'json',
+                success:function(response){     
+                  console.log(response.type);
+                  if(response.type == 'success')
+                  {
+                    $.dialog({
+                        title: 'Thank You!',
+                        content: response.msg,
+                    });
+                    $('#newsletter')[0].reset();
+                  }
+                  else
+                  {
+                    $.dialog({
+                        title: 'Sorry!',
+                        content: 'Something Went Wrong. Try Again.',
+                    });
+                  }                  
+                    
+                },error:function(xhr){
+                    console.log(xhr)
+                }
+            })
+        });
+
+        $('#reload').click(function () {
+          $.ajax({
+              type: 'GET',
+              url: 'https://www.wildpainthouse.com/reload-captcha',
+              success: function (data) {
+                  $(".Captcha-img span").html(data.captcha);
+              }
+          });
+      });
+
+
+      $('.franchiseValidateForm').parsley({
+          errorsWrapper: '<span class="form-error"><img src="https://wildpainthouse.com/public/assets/images/svg/red-paint-icon.svg" style=width:30px; float:left;"></span>',
+          errorTemplate: '<span style="padding:5px;display:inline-block;color: #ff0000;font-size:14px;"></span>'
+      });
+
+
+      $('.franchisebtn').click(function(event) {
+          event.preventDefault();
+          $('.franchiseValidateForm').parsley().validate();
+          if ($(".franchiseValidateForm").parsley().isValid()) {
+          $('.franchiseValidateForm').submit();
+          }
+      });
+  </script>
+    </html>
